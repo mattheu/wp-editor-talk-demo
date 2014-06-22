@@ -12,7 +12,7 @@
                     label: 'Title'
                 }],
                 onsubmit: function( e ) {
-                    var content = '[custom text="' + e.data.title + '"]';
+                    var content = '[custom_header text="' + e.data.title + '"]';
                     editor.insertContent( content );
                 }
 
@@ -35,7 +35,7 @@
          * @return string content markup
          */
         function replaceShortcodes( content ) {
-            return content.replace( /\[custom ([^\]]*)\]/g, function( match ) {
+            return content.replace( /\[custom_header ([^\]]*)\]/g, function( match ) {
                 var text = match.match( /text="([^\"]+)"/ );
                 return html( { text: text[1] } );
             });
@@ -58,13 +58,13 @@
          */
         function restoreShortcodes( content ) {
             content = content.replace( /<h1[^>]+>([^<]+)<\/h1>/g, function( match, text ) {
-                return '<p>[custom text="' + text + '"]</p>';
+                return '<p>[custom_header text="' + text + '"]</p>';
             } );
             return content;
         }
 
         editor.on( 'BeforeSetContent', function( event ) {
-            // event.content = replaceShortcodes( event.content );
+            event.content = replaceShortcodes( event.content );
         });
 
         editor.on( 'PostProcess', function( event ) {

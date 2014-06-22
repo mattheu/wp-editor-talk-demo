@@ -61,4 +61,4 @@ function wpeetd_modify_tinyMCE4( $mceInit, $editor_id ) {
 }
 
 // Modify Tiny_MCE init
-add_filter('tiny_mce_before_init', 'wpeetd_modify_tinyMCE4', 10, 2 );
+add_filter( 'tiny_mce_before_init', 'wpeetd_modify_tinyMCE4', 10, 2 );
