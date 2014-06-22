@@ -1,0 +1,13 @@
+/**
+ * Custom Editor Stylesheet for the TinyMCE Custom Button Demo.
+ */
+.custom-header {
+	padding: 20px;
+	background: blue;
+	color: #FFF;
+	font-size: 50px;
+	line-height: 50px;
+	font-family: helvetica, arial, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+}
